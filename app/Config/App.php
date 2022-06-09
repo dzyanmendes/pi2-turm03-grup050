@@ -24,7 +24,9 @@ class App extends BaseConfig
      *
      * @var string
      */
-    public $baseURL = 'http://54.167.142.17:8000/';
+    
+     //public $baseURL = 'http://54.167.142.17:8000/';   //Dzyan docker config
+    public $baseURL = 'http://localhost/pi2-turm03-grup050';
 
     /**
      * --------------------------------------------------------------------------

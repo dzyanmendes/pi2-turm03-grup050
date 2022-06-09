@@ -32,10 +32,10 @@ class Database extends Config
      */
     public $default = [
         'DSN'      => '',
-        'hostname' => 'localhost',
-        'username' => '',
-        'password' => '',
-        'database' => '',
+        'hostname' => 'mysql13-farm10.kinghost.net',
+        'username' => 'maxholder',
+        'password' => 'Univesp321',
+        'database' => 'maxholder',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
