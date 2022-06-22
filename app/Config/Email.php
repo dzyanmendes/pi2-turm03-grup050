@@ -9,17 +9,17 @@ class Email extends BaseConfig
     /**
      * @var string
      */
-    public $fromEmail = 'pi2turm03grupo050@gmail.com';
+    public $fromEmail = 'pi.univesp@consultortik.com.br';
 
     /**
      * @var string
      */
-    public $fromName = 'pi2turm03grupo050 - Email automatizado';
+    public $fromName = 'pi.univesp@consultortik.com.br';
 
     /**
      * @var string
      */
-    public $recipients = 'pi2turm03grupo050@gmail.com';
+    public $recipients = null;
 
     /**
      * The "user agent"
@@ -33,7 +33,7 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $protocol = 'mail';
+    public $protocol = 'smtp';
 
     /**
      * The server path to Sendmail.
@@ -47,21 +47,21 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $SMTPHost = 'ssl://smtp.gmail.com';
+    public $SMTPHost = 'mail.consultortik.com.br';
 
     /**
      * SMTP Username
      *
      * @var string
      */
-    public $SMTPUser = 'pi2turm03grupo050@gmail.com';
+    public $SMTPUser = 'pi.univesp@consultortik.com.br';
 
     /**
      * SMTP Password
      *
      * @var string
      */
-    public $SMTPPass = 'Cruzeiro@2022';
+    public $SMTPPass = 'KO?-E{n7HIFA';
 
     /**
      * SMTP Port
@@ -89,7 +89,7 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $SMTPCrypto = 'tls';
+    public $SMTPCrypto = 'ssl';
 
     /**
      * Enable word-wrap
@@ -110,7 +110,7 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $mailType = 'text';
+    public $mailType = 'html';
 
     /**
      * Character set (utf-8, iso-8859-1, etc.)

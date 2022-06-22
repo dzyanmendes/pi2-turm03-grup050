@@ -6,6 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" >
+        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>  
+        <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <title><?php if($titulo) { echo $titulo; } else {echo 'PI2T03G050' ;}         ?></title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="<?php echo base_url("public/"."css/styles.css") ?>" rel="stylesheet" />
@@ -21,85 +24,86 @@
             document.body.style.fontSize=tamanho+"px";
             }
         </script>
-        <script>
-        funcion confirma_exclusao(){
-            if (!confirm('Deseja excluir o registro?')){
-                return false;
+        <script type="text/javascript">
+            funcion confirma_exclusao(){
+                if (!confirm('Deseja excluir o registro?')){
+                    return false;
+                }
+                return true;
             }
-            return true;
-        }
         </script>
-         <script>
+        <script type="text/javascript">
     
-        function limpa_formulário_cep() {
-                //Limpa valores do formulário de cep.
-                document.getElementById('rua').value=("");
-                document.getElementById('bairro').value=("");
-                document.getElementById('cidade').value=("");
-                document.getElementById('uf').value=("");
-                document.getElementById('ibge').value=("");
-        }
-
-        function meu_callback(conteudo) {
-            if (!("erro" in conteudo)) {
-                //Atualiza os campos com os valores.
-                document.getElementById('endereco').value=(conteudo.logradouro);
-                document.getElementById('bairro').value=(conteudo.bairro);
-                document.getElementById('cidade').value=(conteudo.localidade);
-                document.getElementById('estado').value=(conteudo.uf);
-                //document.getElementById('ibge').value=(conteudo.ibge);
-            } //end if.
-            else {
-                //CEP não Encontrado.
-                limpa_formulário_cep();
-                alert("CEP não encontrado.");
+            function limpa_formulário_cep() {
+                    //Limpa valores do formulário de cep.
+                    document.getElementById('rua').value=("");
+                    document.getElementById('bairro').value=("");
+                    document.getElementById('cidade').value=("");
+                    document.getElementById('uf').value=("");
+                    document.getElementById('ibge').value=("");
             }
-        }
-            
-        function pesquisacep(valor) {
 
-            //Nova variável "cep" somente com dígitos.
-            var cep = valor.replace(/\D/g, '');
-
-            //Verifica se campo cep possui valor informado.
-            if (cep != "") {
-
-                //Expressão regular para validar o CEP.
-                var validacep = /^[0-9]{8}$/;
-
-                //Valida o formato do CEP.
-                if(validacep.test(cep)) {
-
-                    //Preenche os campos com "..." enquanto consulta webservice.
-                    document.getElementById('endereco').value="...";
-                    document.getElementById('bairro').value="...";
-                    document.getElementById('cidade').value="...";
-                    document.getElementById('estado').value="...";
-                    //document.getElementById('ibge').value="...";
-
-                    //Cria um elemento javascript.
-                    var script = document.createElement('script');
-
-                    //Sincroniza com o callback.
-                    script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
-
-                    //Insere script no documento e carrega o conteúdo.
-                    document.body.appendChild(script);
-
+            function meu_callback(conteudo) {
+                if (!("erro" in conteudo)) {
+                    //Atualiza os campos com os valores.
+                    document.getElementById('endereco').value=(conteudo.logradouro);
+                    document.getElementById('bairro').value=(conteudo.bairro);
+                    document.getElementById('cidade').value=(conteudo.localidade);
+                    document.getElementById('estado').value=(conteudo.uf);
+                    //document.getElementById('ibge').value=(conteudo.ibge);
                 } //end if.
                 else {
-                    //cep é inválido.
+                    //CEP não Encontrado.
                     limpa_formulário_cep();
-                    alert("Formato de CEP inválido.");
+                    alert("CEP não encontrado.");
                 }
-            } //end if.
-            else {
-                //cep sem valor, limpa formulário.
-                limpa_formulário_cep();
             }
-        };
+                
+            function pesquisacep(valor) {
+
+                //Nova variável "cep" somente com dígitos.
+                var cep = valor.replace(/\D/g, '');
+
+                //Verifica se campo cep possui valor informado.
+                if (cep != "") {
+
+                    //Expressão regular para validar o CEP.
+                    var validacep = /^[0-9]{8}$/;
+
+                    //Valida o formato do CEP.
+                    if(validacep.test(cep)) {
+
+                        //Preenche os campos com "..." enquanto consulta webservice.
+                        document.getElementById('endereco').value="...";
+                        document.getElementById('bairro').value="...";
+                        document.getElementById('cidade').value="...";
+                        document.getElementById('estado').value="...";
+                        //document.getElementById('ibge').value="...";
+
+                        //Cria um elemento javascript.
+                        var script = document.createElement('script');
+
+                        //Sincroniza com o callback.
+                        script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+                        //Insere script no documento e carrega o conteúdo.
+                        document.body.appendChild(script);
+
+                    } //end if.
+                    else {
+                        //cep é inválido.
+                        limpa_formulário_cep();
+                        alert("Formato de CEP inválido.");
+                    }
+                } //end if.
+                else {
+                    //cep sem valor, limpa formulário.
+                    limpa_formulário_cep();
+                }
+            };
 
         </script>
+
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -116,8 +120,8 @@
             </form>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-            <button onClick="aumentar();">A+</button> <!-- Botão + -->
-            <button onClick="diminuir();">A-</button> <!-- Botão - -->
+            <button onClick="aumentar();" aria-label="Aumentar tamanho da fonte">A+</button> <!-- Botão + -->
+            <button onClick="diminuir();" aria-label="Diminuir tamanho da fonte">A-</button> <!-- Botão - -->
                 <!--<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -137,41 +141,41 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Cadastros</div>
-                            <a class="nav-link" href="<?php echo base_url("public/"."clientes/") ?>">
-                                <div class="sb-nav-link-icon"><i class="far fa-id-badge"></i></div> Clientes
+                            <div class="sb-sidenav-menu-heading" aria-label="Menu de Cadastros">Cadastros</div>
+                            <a class="nav-link" href="<?php echo base_url("public/"."clientes/") ?>" aria-label="Cadastro de Clientes">
+                                <div class="sb-nav-link-icon" ><i class="far fa-id-badge"></i></div> Clientes
                             </a>
-                            <a class="nav-link" href="<?php echo base_url("public/"."contratos/") ?>">
-                                <div class="sb-nav-link-icon"><i class="fas fa-mail-bulk"></i></div> Contratos
+                            <a class="nav-link" href="<?php echo base_url("public/"."contratos/") ?>" aria-label="Cadastro de Contratos">
+                                <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div> Contratos
                             </a>
 
                             <div class="sb-sidenav-menu-heading">Relatórios</div>
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts" aria-label="Relatórios de Clientes">
                                 <div class="sb-nav-link-icon"><i class="far fa-file-alt"></i></div>Clientes
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/clientes_ativos") ?>">Clientes Ativos</a>
+                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/clientes_ativos") ?>" aria-label="Relatório de Clientes ativos">Clientes Ativos</a>
                                 </nav>
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/clientes_inativos") ?>">Clientes Inativos</a>
+                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/clientes_inativos") ?>" aria-label="Relatório de Clientes Inativos">Clientes Inativos</a>
                                 </nav>
                             </div>
 
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts2" aria-expanded="false" aria-controls="collapseLayouts" aria-label="Relatórios de Contratos">
                                 <div class="sb-nav-link-icon"><i class="far fa-file-alt"></i></div>Contratos
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_vencidos") ?>">Vencidos</a>
-                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_vencendo") ?>">Vencendo</a>
-                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_avencer") ?>">A Vencer</a>
-                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_todos") ?>">Todos</a>
+                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_vencidos") ?>" aria-label="Relatório de contratos vencidos">Vencidos</a>
+                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_vencendo") ?>" aria-label="Relatório de contrados vencendo">Vencendo</a>
+                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_avencer") ?>" aria-label="Relatórios de contratos a vencer">A Vencer</a>
+                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_todos") ?>" aria-label="Relatório de contratos - todos os contratros">Todos</a>
                                 </nav>
                             </div>
-                            <a class="nav-link" href="<?php echo base_url("public/"."relatorios/email_pagina") ?>">
+                            <a class="nav-link" href="<?php echo base_url("public/"."relatorios/email_pagina") ?>" aria-label="Envio de relatórios por Email">
                                 <div class="sb-nav-link-icon"><i class="fas fa-mail-bulk"></i></div> Email-Enviar
                             </a>
 

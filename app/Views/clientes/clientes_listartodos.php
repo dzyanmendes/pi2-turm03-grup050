@@ -22,6 +22,8 @@
     <th>telefone        </th>
     <!--<th>nascimento      </th>-->
     <!--<th>ie              </th>-->
+    <th>Operacoes        </th>
+    <th>+Contrato       </th>
 </tr>
 <?php foreach ($result as $row) : ?>
     <tr>
@@ -39,8 +41,11 @@
         <!--<td><php echo $row->celular         ?></td>-->
         <td><?php echo $row->telefone        ?></td>
         <td>
-            <?php echo anchor(base_url().'/public/clientes/alterar/'.$row->codigo,'Editar'); ?>
-            <?php echo anchor(base_url().'/public/clientes/excluir/'.$row->codigo,'Excluir',['onclick' => 'return confirma_exclusao();']); ?>
+            <a href="<?php echo base_url().'/public/clientes/alterar/'.$row->codigo; ?>" aria-label="Alterar este cliente">Editar</a>
+            <a href="<?php echo base_url().'/public/clientes/excluir/'.$row->codigo; ?>" aria-label="Excluir este cliente" onclick="return confirma_exclusao();">Excluir</a>
+        </td>
+        <td>
+            <a href="<?php echo base_url().'/public/contratos/incluir_cliente/'.$row->codigo; ?>" aria-label="Adicionar contrato para este cliente">+Contrato</a>
         </td>
         <!--<td><php echo $row->nascimento      ?></td>-->
         <!--<td><php echo $row->ie              ?></td>-->

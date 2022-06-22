@@ -95,7 +95,7 @@
   </div> 
   <div class="form-group row">
     <div class="offset-4 col-8">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" aria-label="Enviar alteração do cadastro do cliente">Alterar Cadastro</button>
     </div>
   </div>
 </form>

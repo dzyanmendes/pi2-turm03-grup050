@@ -130,7 +130,7 @@ class Relatorios extends BaseController
     {
         $email= \Config\Services::email();
         $email->setTo('pi2turm03grupo050@gmail.com');
-        $email->setFrom('pi2turm03grupo050@gmail.com');
+        $email->setFrom('pi.univesp@consultortik.com.br');
         $subject='Relatorios - Clientes Ativos - Posição em: ' . date('d/m/Y H:i');
         $email->setSubject($subject);
         $email->setMailType('html');
@@ -158,7 +158,7 @@ class Relatorios extends BaseController
     {
         $email= \Config\Services::email();
         $email->setTo('pi2turm03grupo050@gmail.com');
-        $email->setFrom('pi2turm03grupo050@gmail.com');
+        $email->setFrom('pi.univesp@consultortik.com.br');
         $subject='Relatorios - Clientes Inativos - Posição em: ' . date('d/m/Y H:i');
         $email->setSubject($subject);
         $email->setMailType('html');
@@ -186,7 +186,7 @@ class Relatorios extends BaseController
     {
         $email= \Config\Services::email();
         $email->setTo('pi2turm03grupo050@gmail.com');
-        $email->setFrom('pi2turm03grupo050@gmail.com');
+        $email->setFrom('pi.univesp@consultortik.com.br');
         $subject='Relatorios - Contratos vencidos - Posição em: ' . date('d/m/Y H:i');
         $email->setSubject($subject);
         $email->setMailType('html');
@@ -214,7 +214,7 @@ class Relatorios extends BaseController
     {
         $email= \Config\Services::email();
         $email->setTo('pi2turm03grupo050@gmail.com');
-        $email->setFrom('pi2turm03grupo050@gmail.com');
+        $email->setFrom('pi.univesp@consultortik.com.br');
         $subject='Relatorios - Contratos vencendo - Posição em: ' . date('d/m/Y H:i');
         $email->setSubject($subject);
         $email->setMailType('html');
@@ -243,7 +243,7 @@ class Relatorios extends BaseController
     {
         $email= \Config\Services::email();
         $email->setTo('pi2turm03grupo050@gmail.com');
-        $email->setFrom('pi2turm03grupo050@gmail.com');
+        $email->setFrom('pi.univesp@consultortik.com.br');
         $subject='Relatorios - Contratos a vencer - Posição em: ' . date('d/m/Y H:i');
         $email->setSubject($subject);
         $email->setMailType('html');
@@ -271,7 +271,7 @@ class Relatorios extends BaseController
     {
         $email= \Config\Services::email();
         $email->setTo('pi2turm03grupo050@gmail.com');
-        $email->setFrom('pi2turm03grupo050@gmail.com');
+        $email->setFrom('pi.univesp@consultortik.com.br');
         $subject='Todos os contratos - Posição em: ' . date('d/m/Y H:i');
         $email->setSubject($subject);
         $email->setMailType('html');

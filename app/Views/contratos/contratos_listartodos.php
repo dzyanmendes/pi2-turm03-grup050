@@ -17,6 +17,7 @@
     <th>servico        </th>
     <!--<th>nascimento      </th>-->
     <!--<th>ie              </th>-->
+    <th>operacoes        </th>
 </tr>
 <?php foreach ($result as $row) : ?>
     <tr>
@@ -35,6 +36,11 @@
         <td><?php echo $row->servico        ?></td>
         <!--<td><php echo $row->nascimento      ?></td>-->
         <!--<td><php echo $row->ie              ?></td>-->
+        <td>
+            <a href="<?php echo base_url().'/public/contratos/alterar/'.$row->codigo; ?>" aria-label="Alterar este contrato">Editar</a>
+            <a href="<?php echo base_url().'/public/contratos/excluir/'.$row->codigo; ?>" aria-label="Excluir este contrato" onclick="return confirma_exclusao();">Excluir</a>
+
+        </td>
     </tr>
 <?php endforeach; ?>
 

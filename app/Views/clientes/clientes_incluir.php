@@ -93,7 +93,7 @@
   </div> 
   <div class="form-group row">
     <div class="offset-4 col-8">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" aria-label="Enviar inclusão do Cliente">Incluir Cliente</button>
     </div>
   </div>
 </form>

@@ -22,5 +22,11 @@
         <script src="<?php echo base_url("public/"."assets/demo/chart-bar-demo.js") ?>"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="<?php echo base_url("public/"."js/datatables-simple-demo.js")?>"></script>
+
+        <script type="text/javascript">
+            $( "#datepicker" ).datepicker();      
+            $( "#dataIni" ).datepicker();      
+            $( "#dataFim" ).datepicker();      
+        </script>
     </body>
 </html>

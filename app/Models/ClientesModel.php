@@ -94,7 +94,6 @@ class ClientesModel {
     public function excluirCliente($codigo) {
         $db = \Config\Database::connect();
         //$sql = file_get_contents(__DIR__ . '\SQL\clientes_excluir.sql');
-        
         $table=$db->table($this->table);
         $table->where('codigo',$codigo);
         if($table->delete()){
