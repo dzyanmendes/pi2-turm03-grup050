@@ -85,19 +85,22 @@ class ClientesModel {
     public function alterarCliente($codigo) {
         $db = \Config\Database::connect();
         //$sql = file_get_contents(__DIR__ . '\SQL\clientes_alterar.sql');
-        $sql='select * from Clientes';
+        $sql='select * from Clientes where codigo='.$codigo;
         $query = $db->query($sql);
-        $resultado = $query->getResultArray();
+        $resultado = $query->getResult();
         return $resultado;
     }    
 
     public function excluirCliente($codigo) {
         $db = \Config\Database::connect();
         //$sql = file_get_contents(__DIR__ . '\SQL\clientes_excluir.sql');
-        $sql='select * from Clientes';
-        $query = $db->query($sql);
-        $resultado = $query->getResultArray();
-        return $resultado;
+        
+        $table=$db->table($this->table);
+        $table->where('codigo',$codigo);
+        if($table->delete()){
+            return true;
+        }
+        return $false;
     }    
 
     public function salvar($dados) {
@@ -110,4 +113,15 @@ class ClientesModel {
         return $false;
     }    
 
+    public function salvar_update($dados) {
+        $db = \Config\Database::connect();
+        //$sql = file_get_contents(__DIR__ . '\SQL\clientes_excluir.sql');
+        
+        $table=$db->table($this->table);
+        $table->where('codigo',$dados['codigo']);
+        if($table->update($dados)){
+            return true;
+        }
+        return $false;
+    }    
 }

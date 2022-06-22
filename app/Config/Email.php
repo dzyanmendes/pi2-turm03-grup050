@@ -9,17 +9,17 @@ class Email extends BaseConfig
     /**
      * @var string
      */
-    public $fromEmail;
+    public $fromEmail = 'pi2turm03grupo050@gmail.com';
 
     /**
      * @var string
      */
-    public $fromName;
+    public $fromName = 'pi2turm03grupo050 - Email automatizado';
 
     /**
      * @var string
      */
-    public $recipients;
+    public $recipients = 'pi2turm03grupo050@gmail.com';
 
     /**
      * The "user agent"
@@ -47,35 +47,35 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $SMTPHost;
+    public $SMTPHost = 'ssl://smtp.gmail.com';
 
     /**
      * SMTP Username
      *
      * @var string
      */
-    public $SMTPUser;
+    public $SMTPUser = 'pi2turm03grupo050@gmail.com';
 
     /**
      * SMTP Password
      *
      * @var string
      */
-    public $SMTPPass;
+    public $SMTPPass = 'Cruzeiro@2022';
 
     /**
      * SMTP Port
      *
      * @var int
      */
-    public $SMTPPort = 25;
+    public $SMTPPort = 465;
 
     /**
      * SMTP Timeout (in seconds)
      *
      * @var int
      */
-    public $SMTPTimeout = 5;
+    public $SMTPTimeout = 7;
 
     /**
      * Enable persistent SMTP connections
@@ -124,7 +124,7 @@ class Email extends BaseConfig
      *
      * @var bool
      */
-    public $validate = false;
+    public $validate = true;
 
     /**
      * Email Priority. 1 = highest. 5 = lowest. 3 = normal

@@ -38,7 +38,19 @@
         <!--<td><php echo $row->celular         ?></td>-->
         <td><?php echo $row->servico        ?></td>
         <td><?php echo $row->dias        ?></td>
-        <td><?php echo $row->status        ?></td>
+        <td><?php 
+                if ($row->status=='A vencer'){
+                    ?><div style="background-color: #fcfc05!important;"><i class="fas fa-circle"></i></div><?php
+                } else {
+                    if ($row->status=='Vencido'){
+                        ?><div style="background-color: #fcfc05!important;"><i class="fas fa-circle"></i></div><?php
+                    } else {
+                        ?><div style="background-color: #0526fc!important;"><i class="fas fa-circle"></i></div><?php
+                    }
+                }
+                echo $row->status;
+            ?>
+        </td>
         <!--<td><php echo $row->nascimento      ?></td>-->
         <!--<td><php echo $row->ie              ?></td>-->
     </tr>

@@ -104,5 +104,195 @@ class Relatorios extends BaseController
         echo view('layout/footer');            
     }     
 
+    public function email_pagina()
+    {
+        //echo 'Você está em Controller -> Relatorios -> Contratos todos';
+        $data['titulo'] = 'Email - Envio de relatórios';
+        echo view('layout/header',$data);
+
+        //$model = new \App\Models\RelatoriosModel();
+        //$data['result'] = $model->contratos_todos();            
+        $data['titulo_interno'] = 'Email - Envio de relatórios';
+        echo view('relatorios/email_pagina',$data);     
+
+        echo view('layout/footer');            
+    }     
+
+//******************************************************************************************/
+//******************************************************************************************/
+//******************************************************************************************/
+//***********************************   EMAIL SESSION         ******************************/
+//******************************************************************************************/
+//******************************************************************************************/
+
+
+    public function email_clientes_ativos()
+    {
+        $email= \Config\Services::email();
+        $email->setTo('pi2turm03grupo050@gmail.com');
+        $email->setFrom('pi2turm03grupo050@gmail.com');
+        $subject='Relatorios - Clientes Ativos - Posição em: ' . date('d/m/Y H:i');
+        $email->setSubject($subject);
+        $email->setMailType('html');
+        $data['titulo_relatorio'] = $subject;
+
+        $model = new \App\Models\RelatoriosModel();
+        $data['result'] = $model->clientes_ativos();            
+        $email->setMessage( view( 'relatorios/clientes_ativos', $data,  [true] ) );
+
+        $data['titulo'] = $subject;
+        echo view('layout/header',$data);
+
+        if ($email->send()){
+            echo "Email enviado em ". date('d/m/Y ') . " às " . date('H:i');
+        } else {
+            echo "Problema no envio do email";
+            $data = $email->printDebugger(['headers']);
+            print_r($data);
+        }        
+
+        echo view('layout/footer');            
+    }    
+
+    public function email_clientes_inativos()
+    {
+        $email= \Config\Services::email();
+        $email->setTo('pi2turm03grupo050@gmail.com');
+        $email->setFrom('pi2turm03grupo050@gmail.com');
+        $subject='Relatorios - Clientes Inativos - Posição em: ' . date('d/m/Y H:i');
+        $email->setSubject($subject);
+        $email->setMailType('html');
+        $data['titulo_relatorio'] = $subject;
+
+        $model = new \App\Models\RelatoriosModel();
+        $data['result'] = $model->clientes_inativos();            
+        $email->setMessage( view( 'relatorios/clientes_inativos', $data,  [true] ) );
+
+        $data['titulo'] = $subject;
+        echo view('layout/header',$data);
+
+        if ($email->send()){
+            echo "Email enviado em ". date('d/m/Y ') . " às " . date('H:i');
+        } else {
+            echo "Problema no envio do email";
+            $data = $email->printDebugger(['headers']);
+            print_r($data);
+        }        
+
+        echo view('layout/footer');            
+    }    
+
+    public function email_contratos_vencidos()
+    {
+        $email= \Config\Services::email();
+        $email->setTo('pi2turm03grupo050@gmail.com');
+        $email->setFrom('pi2turm03grupo050@gmail.com');
+        $subject='Relatorios - Contratos vencidos - Posição em: ' . date('d/m/Y H:i');
+        $email->setSubject($subject);
+        $email->setMailType('html');
+        $data['titulo_relatorio'] = $subject;
+
+        $model = new \App\Models\RelatoriosModel();
+        $data['result'] = $model->contratos_vencidos();            
+        $email->setMessage( view( 'relatorios/contratos_vencidos', $data,  [true] ) );
+
+        $data['titulo'] = $subject;
+        echo view('layout/header',$data);
+
+        if ($email->send()){
+            echo "Email enviado em ". date('d/m/Y ') . " às " . date('H:i');
+        } else {
+            echo "Problema no envio do email";
+            $data = $email->printDebugger(['headers']);
+            print_r($data);
+        }        
+
+        echo view('layout/footer');            
+    }     
+
+    public function email_contratos_vencendo()
+    {
+        $email= \Config\Services::email();
+        $email->setTo('pi2turm03grupo050@gmail.com');
+        $email->setFrom('pi2turm03grupo050@gmail.com');
+        $subject='Relatorios - Contratos vencendo - Posição em: ' . date('d/m/Y H:i');
+        $email->setSubject($subject);
+        $email->setMailType('html');
+        $data['titulo_relatorio'] = $subject;
+
+        $model = new \App\Models\RelatoriosModel();
+        $data['result'] = $model->contratos_vencendo();            
+        $email->setMessage( view( 'relatorios/contratos_vencendo', $data,  [true] ) );
+
+        $data['titulo'] = $subject;
+        echo view('layout/header',$data);
+
+        if ($email->send()){
+            echo "Email enviado em ". date('d/m/Y ') . " às " . date('H:i');
+        } else {
+            echo "Problema no envio do email";
+            $data = $email->printDebugger(['headers']);
+            print_r($data);
+        }
+
+
+        echo view('layout/footer');            
+    }     
+
+    public function email_contratos_avencer()
+    {
+        $email= \Config\Services::email();
+        $email->setTo('pi2turm03grupo050@gmail.com');
+        $email->setFrom('pi2turm03grupo050@gmail.com');
+        $subject='Relatorios - Contratos a vencer - Posição em: ' . date('d/m/Y H:i');
+        $email->setSubject($subject);
+        $email->setMailType('html');
+        $data['titulo_relatorio'] = $subject;
+
+        $model = new \App\Models\RelatoriosModel();
+        $data['result'] = $model->contratos_avencer();            
+        $email->setMessage( view( 'relatorios/contratos_avencer', $data,  [true] ) );
+
+        $data['titulo'] = $subject;
+        echo view('layout/header',$data);
+
+        if ($email->send()){
+            echo "Email enviado em ". date('d/m/Y ') . " às " . date('H:i');
+        } else {
+            echo "Problema no envio do email";
+            $data = $email->printDebugger(['headers']);
+            print_r($data);
+        }        
+
+        echo view('layout/footer');            
+    }     
+
+    public function email_contratos_todos()
+    {
+        $email= \Config\Services::email();
+        $email->setTo('pi2turm03grupo050@gmail.com');
+        $email->setFrom('pi2turm03grupo050@gmail.com');
+        $subject='Todos os contratos - Posição em: ' . date('d/m/Y H:i');
+        $email->setSubject($subject);
+        $email->setMailType('html');
+        $data['titulo_relatorio'] = $subject;
+
+        $model = new \App\Models\RelatoriosModel();
+        $data['result'] = $model->contratos_todos();            
+        $email->setMessage( view( 'relatorios/contratos_todos', $data,  [true] ) );
+
+        $data['titulo'] = $subject;
+        echo view('layout/header',$data);
+
+        if ($email->send()){
+            echo "Email enviado em ". date('d/m/Y ') . " às " . date('H:i');
+        } else {
+            echo "Problema no envio do email";
+            $data = $email->printDebugger(['headers']);
+            print_r($data);
+        }
+
+        echo view('layout/footer');            
+    }
 
 }

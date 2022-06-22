@@ -171,6 +171,9 @@
                                     <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_todos") ?>">Todos</a>
                                 </nav>
                             </div>
+                            <a class="nav-link" href="<?php echo base_url("public/"."relatorios/email_pagina") ?>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-mail-bulk"></i></div> Email-Enviar
+                            </a>
 
 
                             <!--<div class="sb-sidenav-menu-heading">Addons</div>

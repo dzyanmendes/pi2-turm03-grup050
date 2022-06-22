@@ -50,7 +50,9 @@ class Clientes extends BaseController
 
         $model = new \App\Models\ClientesModel();
         $data['result'] = $model->alterarCliente($cliente);            
-        echo view('nome_da_view',$data);
+        $data['titulo_interno'] =  'Alteração de cadatro do cliente';
+        //dd($data);
+        echo view('clientes\clientes_alterar',$data);
         
         echo view('layout/footer');            
     }       
@@ -60,16 +62,10 @@ class Clientes extends BaseController
         //echo 'Você está em Controller -> Clientes -> alterar';
         $data['titulo'] = 'Clientes - alterar';
         echo view('layout/header',$data);
-
         $model = new \App\Models\ClientesModel();
-
-
         $data = $this->request->getPost();
-
         unset($data['submit']);
-        
         //dd($data);
-
         if ($model->salvar($data)){
             return view('messages',[
                 'message' => 'Cliente cadastrado com sucesso!'
@@ -84,6 +80,26 @@ class Clientes extends BaseController
         echo view('layout/footer');            
     }       
 
+    public function salvar_update($codigo)
+    {
+        //echo 'Você está em Controller -> Clientes -> alterar';
+        $data['titulo'] = 'Clientes - alterar';
+        echo view('layout/header',$data);
+
+        $model = new \App\Models\ClientesModel();
+        $data = $this->request->getPost();
+        unset($data['submit']);
+        //dd($data);
+        if ($model->salvar_update($data)){
+            return view('messages',[
+                'message' => 'Cliente cadastrado com sucesso!'
+            ]);
+        } else {
+            echo 'Ocorreu um erro';
+        }
+        echo view('layout/footer');            
+    }   
+
     public function excluir($cliente)
     {
         //echo 'Você está em Controller -> Clientes -> excluir';
@@ -94,7 +110,7 @@ class Clientes extends BaseController
         
         $model = new \App\Models\ClientesModel();
         //if ($model->excluirCliente($cliente)) {
-        if (true) {            
+        if ($model->excluirCliente($cliente)) {            
             echo view('messages',[
                 'message' => 'Usuário excluído com sucesso'
             ]);
@@ -102,10 +118,11 @@ class Clientes extends BaseController
             echo 'Erro';
         }
 
-
+        $data['titulo_interno'] = 'Clientes - excluir';
         //echo view('nome_da_view',$data);
         echo view('clientes/clientes_listartodos', [
-            'result' => $model->listarClientes()
+            'result' => $model->listarClientes(),
+            'titulo_interno' => 'Listagem de todos os Clientes'
          ] );
         echo view('layout/footer');            
     }           
