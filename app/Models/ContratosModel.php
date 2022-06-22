@@ -19,9 +19,9 @@ class ContratosModel {
     public function listarContratos() {
         $db = \Config\Database::connect();
         //$sql = file_get_contents(__DIR__ . '\SQL\contrato_listar_todos.sql');
-        $sql='select * from Clientes';
+        $sql='select * from Clientes left join Contratos on Clientes.codigo=Contratos.clientecodigo';
         $query = $db->query($sql);
-        $resultado = $query->getResultArray();
+        $resultado = $query->getResult();
         return $resultado;
     }
 

@@ -4,18 +4,27 @@ namespace App\Controllers;
 
 class Clientes extends BaseController
 {
+    //private $model;
+
+    public function __construct(){
+        //$model = new \App\Models\ClientesModel();
+    }
+    
+
     public function index()
     {
         //echo 'Você está em Controller -> Clientes -> Index';
         $data['titulo'] = 'Clientes - index';
         echo view('layout/header',$data);
-
+        
         $model = new \App\Models\ClientesModel();
-        $data['result'] = $model->listarClientes();            
+        //$data['result'] = $model->listarClientes();            
         
         echo 'Você está em Controller -> Clientes -> Index';
-        //echo view('nome_da_view',$data);
-
+        echo view('clientes/clientes_listartodos', [
+                    'result' => $model->listarClientes(),
+                    'titulo_interno' => 'Listagem de todos os Clientes'
+                 ] );
         echo view('layout/footer');            
     }
 
@@ -25,37 +34,90 @@ class Clientes extends BaseController
         $data['titulo'] = 'Clientes - incluir';
         echo view('layout/header',$data);
 
-        $model = new \App\Models\ClientesModel();
-        $data['result'] = $model->incluirCliente();            
-        echo view('nome_da_view',$data);        
-
+        //$model = new \App\Models\ClientesModel();
+        // $data['result'] = $model->incluirCliente();            
+        $data['titulo_interno']='Inclusão de Clientes';
+        echo view('clientes/clientes_incluir',$data);        
+        echo 'Você está em Controller -> Clientes -> incluir';
         echo view('layout/footer');            
     }    
     
-    public function alterar()
+    public function alterar($cliente)
     {
         //echo 'Você está em Controller -> Clientes -> alterar';
         $data['titulo'] = 'Clientes - alterar';
         echo view('layout/header',$data);
 
         $model = new \App\Models\ClientesModel();
-        $data['result'] = $model->alterarCliente();            
+        $data['result'] = $model->alterarCliente($cliente);            
         echo view('nome_da_view',$data);
         
         echo view('layout/footer');            
     }       
 
-    public function excluir()
+    public function salvar()
     {
-        //echo 'Você está em Controller -> Clientes -> excluir';
-        $data['titulo'] = 'Clientes - excluir';
+        //echo 'Você está em Controller -> Clientes -> alterar';
+        $data['titulo'] = 'Clientes - alterar';
         echo view('layout/header',$data);
 
         $model = new \App\Models\ClientesModel();
-        $data['result'] = $model->excluirCliente();            
-        echo view('nome_da_view',$data);
+
+
+        $data = $this->request->getPost();
+
+        unset($data['submit']);
+        
+        //dd($data);
+
+        if ($model->salvar($data)){
+            return view('messages',[
+                'message' => 'Cliente cadastrado com sucesso!'
+            ]);
+        } else {
+            echo 'Ocorreu um erro';
+        }
+        
+        //$data['result'] = $model->alterarCliente($cliente);            
+        
         
         echo view('layout/footer');            
+    }       
+
+    public function excluir($cliente)
+    {
+        //echo 'Você está em Controller -> Clientes -> excluir';
+        
+        $data['titulo'] = 'Clientes - excluir';
+        echo view('layout/header',$data);
+
+        
+        $model = new \App\Models\ClientesModel();
+        //if ($model->excluirCliente($cliente)) {
+        if (true) {            
+            echo view('messages',[
+                'message' => 'Usuário excluído com sucesso'
+            ]);
+        } else {
+            echo 'Erro';
+        }
+
+
+        //echo view('nome_da_view',$data);
+        echo view('clientes/clientes_listartodos', [
+            'result' => $model->listarClientes()
+         ] );
+        echo view('layout/footer');            
     }           
+
+    public function getCepbyAPI($cep){
+        $client = \Config\Services::curlRequest();
+
+        $requestGET = $client->request('GET','viacep.com.br/ws/'.$cep.'/json/');
+
+        $dados = json_decode($requestGET->getBody());
+
+        dd($dados->cep);
+    }
     
 }

@@ -13,7 +13,7 @@ class Relatorios extends BaseController
         //$model = new \App\Models\RelatoriosModel();
         //$data['result'] = $model->listarContratos();            
         
-        echo 'Você está em Controller -> Relatorios -> Index';
+        $data['titulo_relatorio'] =  'Você está em Controller -> Relatorios -> Index';
         //echo view('nome_da_view',$data);
 
         echo view('layout/footer');            
@@ -27,8 +27,9 @@ class Relatorios extends BaseController
 
         $model = new \App\Models\RelatoriosModel();
         $data['result'] = $model->clientes_ativos();            
-        echo 'Você está em Controller -> Relatorios -> clientes ativos';
-        //echo view('nome_da_view',$data);        
+        $data['titulo_relatorio'] = 'Você está em Controller -> Relatorios -> clientes ativos';
+        
+        echo view('relatorios/clientes_ativos',$data);        
 
         echo view('layout/footer');            
     }    
@@ -41,8 +42,8 @@ class Relatorios extends BaseController
 
         $model = new \App\Models\RelatoriosModel();
         $data['result'] = $model->clientes_inativos();            
-        echo 'Você está em Controller -> Relatorios -> clientes inativos';
-        //echo view('nome_da_view',$data);        
+        $data['titulo_relatorio'] = 'Você está em Controller -> Relatorios -> clientes inativos';
+        echo view('relatorios/clientes_inativos',$data);      
 
         echo view('layout/footer');            
     }    
@@ -55,8 +56,8 @@ class Relatorios extends BaseController
 
         $model = new \App\Models\RelatoriosModel();
         $data['result'] = $model->contratos_vencidos();            
-        echo 'Você está em Controller -> Relatorios -> Contratos vencidos';
-        //echo view('nome_da_view',$data);        
+        $data['titulo_relatorio'] = 'Você está em Controller -> Relatorios -> Contratos vencidos';
+        echo view('relatorios/contratos_vencidos',$data);       
 
         echo view('layout/footer');            
     }     
@@ -69,8 +70,8 @@ class Relatorios extends BaseController
 
         $model = new \App\Models\RelatoriosModel();
         $data['result'] = $model->contratos_vencendo();            
-        echo 'Você está em Controller -> Relatorios -> Contratos vencendo';
-        //echo view('nome_da_view',$data);        
+        $data['titulo_relatorio'] = 'Você está em Controller -> Relatorios -> Contratos vencendo';
+        echo view('relatorios/contratos_vencendo',$data);  
 
         echo view('layout/footer');            
     }     
@@ -83,8 +84,8 @@ class Relatorios extends BaseController
 
         $model = new \App\Models\RelatoriosModel();
         $data['result'] = $model->contratos_avencer();            
-        echo 'Você está em Controller -> Relatorios -> Contratos a vencer';
-        //echo view('nome_da_view',$data);        
+        $data['titulo_relatorio'] = 'Você está em Controller -> Relatorios -> Contratos a vencer';
+        echo view('relatorios/contratos_avencer',$data);       
 
         echo view('layout/footer');            
     }     
@@ -97,8 +98,8 @@ class Relatorios extends BaseController
 
         $model = new \App\Models\RelatoriosModel();
         $data['result'] = $model->contratos_todos();            
-        echo 'Você está em Controller -> Relatorios -> Contratos todos';
-        //echo view('nome_da_view',$data);        
+        $data['titulo_relatorio'] = 'Você está em Controller -> Relatorios -> Contratos todos';
+        echo view('relatorios/contratos_todos',$data);     
 
         echo view('layout/footer');            
     }     

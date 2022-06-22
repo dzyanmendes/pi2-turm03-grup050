@@ -89,3 +89,27 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
  5 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
  6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-10 19:00:12 --> Call to undefined method App\Models\ClientesModel::incluirCliente()
+in APPPATH\Controllers\Clientes.php on line 29.
+ 1 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Clientes->incluir()
+ 2 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+ 3 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-10 19:01:34 --> Invalid file: nome_da_view.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('nome_da_view.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('nome_da_view', [], true)
+ 3 APPPATH\Controllers\Clientes.php(30): view('nome_da_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Clientes->incluir()
+ 5 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2022-06-10 19:01:37 --> Invalid file: nome_da_view.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('nome_da_view.php')
+ 2 SYSTEMPATH\Common.php(1135): CodeIgniter\View\View->render('nome_da_view', [], true)
+ 3 APPPATH\Controllers\Clientes.php(30): view('nome_da_view', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(898): App\Controllers\Clientes->incluir()
+ 5 SYSTEMPATH\CodeIgniter.php(468): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(55): CodeIgniter\CodeIgniter->run()

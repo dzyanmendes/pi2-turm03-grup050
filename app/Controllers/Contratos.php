@@ -6,16 +6,17 @@ class Contratos extends BaseController
 {
     public function index()
     {
-        //echo 'Você está em Controller -> Contratos -> Index';
-        $data['titulo'] = ' Contratos - Index';
+        //echo 'Você está em Controller -> Clientes -> Index';
+        $data['titulo'] = 'Clientes - index';
         echo view('layout/header',$data);
-
-        $model = new \App\Models\ContratosModel();
-        $data['result'] = $model->listarContratos();            
         
-        echo 'Você está em Controller -> Contratos -> Index';
-        //echo view('nome_da_view',$data);
-
+        $model = new \App\Models\ContratosModel();
+        //$data['result'] = $model->listarClientes();            
+        
+        echo 'Você está em Controller -> Clientes -> Index';
+        echo view('contratos/contratos_listartodos', [
+                    'result' => $model->listarContratos()
+                 ] );
         echo view('layout/footer');            
     }
 
