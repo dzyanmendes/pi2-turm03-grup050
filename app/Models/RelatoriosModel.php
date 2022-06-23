@@ -64,4 +64,35 @@ class RelatoriosModel {
         return $resultado;
     }
 
+    public function deshboard_todos() {
+        $db = \Config\Database::connect();
+        $sql = file_get_contents(__DIR__ . '\SQL\relatorios_deshoardtotalcontratos.sql');
+        $query = $db->query($sql);
+        $resultado = $query->getResult();
+        return $resultado;
+    }
+
+    public function deshboard_qtde() {
+        $db = \Config\Database::connect();
+        $sql = file_get_contents(__DIR__ . '\SQL\relatorios_deshoardqtdecontratos.sql');
+        $query = $db->query($sql);
+        $resultado = $query->getResult();
+        return $resultado;
+    }
+
+    public function deshboard_graficobarra() {
+        $db = \Config\Database::connect();
+        $sql = file_get_contents(__DIR__ . '\SQL\relatorios_dashboardgraficobarra.sql');
+        $query = $db->query($sql);
+        $resultado = $query->getResultArray();
+        return $resultado;
+    }
+
+    public function deshboard_graficoarea() {
+        $db = \Config\Database::connect();
+        $sql = file_get_contents(__DIR__ . '\SQL\relatorios_dashboardgraficoarea.sql');
+        $query = $db->query($sql);
+        $resultado = $query->getResultArray();
+        return $resultado;
+    }
 }

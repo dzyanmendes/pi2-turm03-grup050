@@ -3,7 +3,7 @@
     <?php if($titulo_interno) { ?><h3><?php echo $titulo_interno; ?> </h3> <?php } else {echo '' ;} ?>
 </div>
 <div >
-<table class="table" id="dataaTable">
+<table class="table table-sm" id="dataaTable">
 
 <tr>
     <th>codigo          </th>
@@ -32,8 +32,8 @@
         <!--<td><php echo $row->rg              ?></td>-->
         <td><?php echo $row->cnpj            ?></td>
         <!--<td><php echo $row->endereco        ?></td>-->
-        <td><?php echo $row->dataIni          ?></td>
-        <td><?php echo $row->dataFim          ?></td>
+        <td><?php echo date("d/m/Y", strtotime($row->dataIni)) ?></td>
+        <td><?php echo date("d/m/Y", strtotime($row->dataFim)) ?></td>
         <td><?php echo $row->tipo          ?></td>
         <!--<td><php echo $row->cep             ?></td>-->
         <!--<td><php echo $row->celular         ?></td>-->

@@ -21,8 +21,8 @@ class ContratosModel {
                                 'dataFim',
                                 'observacao',
                                 'servico',
-                                'tipo',
-                                'contratoRef'
+                                'tipo'
+                                //,'contratoRef'
     ];
 
     // Dates

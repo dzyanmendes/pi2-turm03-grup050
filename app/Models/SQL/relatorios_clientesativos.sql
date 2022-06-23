@@ -29,4 +29,4 @@ select
 	**/
 from Clientes 
 left join Contratos on Clientes.codigo=Contratos.clientecodigo
-where DATEDIFF(NOW(),dataFim)>0
+where DATEDIFF(NOW(),dataFim)<=0

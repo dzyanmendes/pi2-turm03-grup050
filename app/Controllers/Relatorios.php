@@ -116,7 +116,37 @@ class Relatorios extends BaseController
         echo view('relatorios/email_pagina',$data);     
 
         echo view('layout/footer');            
-    }     
+    }   
+    
+    public function dashboard()
+    {
+        //echo 'Você está em Controller -> Relatorios -> Contratos todos';
+        $data['titulo'] = 'Dashboard - geral';
+        echo view('layout/header',$data);
+
+        //$model = new \App\Models\RelatoriosModel();
+        //$data['result'] = $model->contratos_todos();            
+        $data['titulo_interno'] = 'Dashboard - geral';
+        $model = new \App\Models\RelatoriosModel();
+
+        $data['result'] = $model->contratos_vencendo(); 
+
+        $data['total'] = $model->deshboard_todos(); 
+        $data['qtde'] = $model->deshboard_qtde(); 
+
+        $aux=$model->deshboard_graficobarra(); 
+        $data['graficobarra_values'] = '['.implode(',', array_column($aux, 'qtd')).']';
+        $data['graficobarra_names'] = '["'.implode('","', array_column($aux, 'mes_fim')).'"]';
+
+        $aux=$model->deshboard_graficoarea(); 
+        $data['graficoarea_values'] = '['.implode(',', array_column($aux, 'qtd')).']';
+        $data['graficoarea_names'] = '["'.implode('","', array_column($aux, 'mes_fim')).'"]';
+        
+        
+        echo view('relatorios/dashboard',$data);     
+
+        echo view('layout/footer');            
+    }   
 
 //******************************************************************************************/
 //******************************************************************************************/

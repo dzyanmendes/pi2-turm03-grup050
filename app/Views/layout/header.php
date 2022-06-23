@@ -150,6 +150,11 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
+                            <div class="sb-sidenav-menu-heading" aria-label="Menu de Cadastros">Dashboard</div>
+                            <a class="nav-link" href="<?php echo base_url("public/"."relatorios/dashboard") ?>" aria-label="Dashboard">
+                                <div class="sb-nav-link-icon" ><i class="far fa-id-badge"></i></div> Geral
+                            </a>                                
+                        
                             <div class="sb-sidenav-menu-heading" aria-label="Menu de Cadastros">Cadastros</div>
                             <a class="nav-link" href="<?php echo base_url("public/"."clientes/") ?>" aria-label="Cadastro de Clientes">
                                 <div class="sb-nav-link-icon" ><i class="far fa-id-badge"></i></div> Clientes

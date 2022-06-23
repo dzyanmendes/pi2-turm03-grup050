@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use DateTime;
+
 class Contratos extends BaseController
 {
     public function index()
@@ -87,8 +89,13 @@ class Contratos extends BaseController
         echo view('layout/header',$data);
         $model = new \App\Models\ContratosModel();
         $data = $this->request->getPost();
+        $datetime = new DateTime($data['dataIni']);
+        $data['dataIni']=date_format($datetime,'Y-m-d');
+        $datetime = new DateTime($data['dataFim']);
+        $data['dataFim']=date_format($datetime,'Y-m-d');
         unset($data['submit']);
         //dd($data);
+
         if ($model->salvar($data)){
             return view('messages',[
                 'message' => 'Contrato cadastrado com sucesso!'
@@ -111,7 +118,12 @@ class Contratos extends BaseController
 
         $model = new \App\Models\ContratosModel();
         $data = $this->request->getPost();
+        $datetime = new DateTime($data['dataIni']);
+        $data['dataIni']=date_format($datetime,'Y-m-d');
+        $datetime = new DateTime($data['dataFim']);
+        $data['dataFim']=date_format($datetime,'Y-m-d');        
         unset($data['submit']);
+
         //dd($data);
         if ($model->salvar_update($data)){
             return view('messages',[

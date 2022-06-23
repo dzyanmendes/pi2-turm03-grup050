@@ -23,9 +23,9 @@ select
 	Contratos.tipo,
 	Contratos.contratoRef,
 	DATEDIFF(NOW(),dataFim) dias,
-	case when DATEDIFF(NOW(),dataFim)<0 then 'Vencido'
-		 when DATEDIFF(NOW(),dataFim)<15 then 'A vencer'
+	case when DATEDIFF(NOW(),dataFim)>0 then 'Vencido'
+		 when DATEDIFF(NOW(),dataFim)*(-1)<=30 then 'A vencer'
 		 else 'No prazo' end status
 from Clientes 
 left join Contratos on Clientes.codigo=Contratos.clientecodigo
-where DATEDIFF(NOW(),dataFim) <0
+where DATEDIFF(NOW(),dataFim) >0

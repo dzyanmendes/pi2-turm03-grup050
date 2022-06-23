@@ -33,7 +33,7 @@
       <div class="form-group row">
         <label for="dataFim" class="col-4 col-form-label">dataFim</label>
         <div class="col-8">
-          <input id="dataFim" name="dataIni" type="text" class="form-control">
+          <input id="dataFim" name="dataFim" type="text" class="form-control">
         </div>
       </div>
       <div class="form-group row">
@@ -49,17 +49,20 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="tipo" class="col-4 col-form-label">tipo</label>
+        <label for="tipo" class="col-4 col-form-label">tipo</label> 
         <div class="col-8">
-          <input id="tipo" name="tipo" type="text" class="form-control">
+          <select id="tipo" name="tipo" class="custom-select">
+            <option value="mensal">mensal</option>
+            <option value="anual">anual</option>
+          </select>
         </div>
-      </div>
-      <div class="form-group row">
+      </div> 
+      <!--<div class="form-group row">
         <label for="contratoRef" class="col-4 col-form-label">contratoRef</label>
         <div class="col-8">
           <input id="contratoRef" name="contratoRef" placeholder="# contrato referencia" type="text" class="form-control">
         </div>
-      </div>
+      </div>-->
       <div class="form-group row">
         <div class="offset-4 col-8">
           <button type="submit" class="btn btn-primary" aria-label="Enviar inclusão do Contrato">Incluir Contrato</button>
