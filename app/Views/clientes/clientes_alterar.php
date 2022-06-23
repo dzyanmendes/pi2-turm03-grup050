@@ -7,7 +7,7 @@
 
 <?php foreach($result as $row){?>
 <div class="formulario">
-<form form action="<?php echo base_url().'/public/clientes/salvar_update/'.$row->codigo?>" method="post">
+<form form action="<?php echo base_url().'clientes/salvar_update/'.$row->codigo?>" method="post">
   <input type="hidden" id="codigo" name="codigo" value="<?php echo $row->codigo; ?>">
   <div class="form-group row">
     <label for="nome" class="col-4 col-form-label">Nome / Razão Social</label> 

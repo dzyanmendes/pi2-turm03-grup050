@@ -11,7 +11,7 @@
 
   <?php foreach ($result as $row) { ?>
     <div class="formulario">
-      <form form action="<?php echo base_url() . '/public/contratos/salvar_update' ?>" method="post">
+      <form form action="<?php echo base_url() . '/contratos/salvar_update' ?>" method="post">
         <input type="hidden" id="codigo" name="codigo" value="<?php echo $row->codigo; ?>">
         <!--<div class="form-group row">
         <label for="codigo" class="col-4 col-form-label">codigo</label> 

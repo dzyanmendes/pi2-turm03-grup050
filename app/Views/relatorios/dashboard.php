@@ -11,7 +11,7 @@
                                 <div class="card bg-primary text-white mb-4">
                                     <div class="card-body"><?php echo $row->total; ?> contratos</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="<?php echo base_url("public/"."relatorios/contratos_todos") ?>">Total de Contratos</a>
+                                        <a class="small text-white stretched-link" href="<?php echo base_url("relatorios/contratos_todos") ?>">Total de Contratos</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -23,7 +23,7 @@
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body"><?php echo $row->vencendo; ?> contratos</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="<?php echo base_url("public/"."relatorios/contratos_vencendo") ?>">Vencendo em breve</a>
+                                        <a class="small text-white stretched-link" href="<?php echo base_url("relatorios/contratos_vencendo") ?>">Vencendo em breve</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -32,7 +32,7 @@
                                 <div class="card bg-success text-white mb-4">
                                     <div class="card-body"><?php echo $row->noprazo; ?> contratos</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="<?php echo base_url("public/"."relatorios/contratos_avencer") ?>">No prazo</a>
+                                        <a class="small text-white stretched-link" href="<?php echo base_url("relatorios/contratos_avencer") ?>">No prazo</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@
                                 <div class="card bg-danger text-white mb-4">
                                     <div class="card-body"><?php echo $row->vencidos; ?> contratos</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="<?php echo base_url("public/"."relatorios/contratos_vencidos") ?>">Vencidos</a>
+                                        <a class="small text-white stretched-link" href="<?php echo base_url("relatorios/contratos_vencidos") ?>">Vencidos</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>

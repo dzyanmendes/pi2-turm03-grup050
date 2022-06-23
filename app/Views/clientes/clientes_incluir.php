@@ -11,7 +11,7 @@
   </div>
 
   <div class="formulario">
-    <form form action="<?php echo base_url() . '/public/clientes/salvar' ?>" method="post">
+    <form form action="<?php echo base_url() . '/clientes/salvar' ?>" method="post">
       <div class="form-group row">
         <label for="nome" class="col-4 col-form-label">Nome / Razão Social</label>
         <div class="col-8">

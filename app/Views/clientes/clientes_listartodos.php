@@ -3,7 +3,7 @@
     <?php if($titulo_interno) { ?><h3><?php echo $titulo_interno; ?> </h3> <?php } else {echo '' ;} ?>
 </div>
 
-<div class="mb-2"><a href="<?php echo base_url().'/public/clientes/incluir'?>" class="btn btn-primary active" role="button" aria-pressed="true">Cadastrar Cliente</a>
+<div class="mb-2"><a href="<?php echo base_url().'/clientes/incluir'?>" class="btn btn-primary active" role="button" aria-pressed="true">Cadastrar Cliente</a>
 </div>
 <table id="dataaTable" class="table">
 
@@ -42,11 +42,11 @@
         <!--<td><php echo $row->celular         ?></td>-->
         <td><?php echo $row->telefone        ?></td>
         <td style="text-align:center">
-            <a class="btn btn-success btn-sm" style="width: 70px" href="<?php echo base_url().'/public/clientes/alterar/'.$row->codigo; ?>" aria-label="Alterar este cliente">Editar</a>
-            <a class="btn btn-warning btn-sm" style="width: 70px" href="<?php echo base_url().'/public/clientes/excluir/'.$row->codigo; ?>" aria-label="Excluir este cliente" onclick="return confirma_exclusao();">Excluir</a>
+            <a class="btn btn-success btn-sm" style="width: 70px" href="<?php echo base_url().'/clientes/alterar/'.$row->codigo; ?>" aria-label="Alterar este cliente">Editar</a>
+            <a class="btn btn-warning btn-sm" style="width: 70px" href="<?php echo base_url().'/clientes/excluir/'.$row->codigo; ?>" aria-label="Excluir este cliente" onclick="return confirma_exclusao();">Excluir</a>
         </td>
         <td style="text-align:center">
-            <a class="btn btn-primary btn-sm" href="<?php echo base_url().'/public/contratos/incluir_cliente/'.$row->codigo; ?>" aria-label="Adicionar contrato para este cliente">+Contrato</a>
+            <a class="btn btn-primary btn-sm" href="<?php echo base_url().'/contratos/incluir_cliente/'.$row->codigo; ?>" aria-label="Adicionar contrato para este cliente">+Contrato</a>
         </td>
         <!--<td><php echo $row->nascimento      ?></td>-->
         <!--<td><php echo $row->ie              ?></td>-->

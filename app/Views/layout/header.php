@@ -11,7 +11,7 @@
         <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
         <title><?php if($titulo) { echo $titulo; } else {echo 'PI2T03G050' ;}         ?></title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-        <link href="<?php echo base_url("public/"."css/styles.css") ?>" rel="stylesheet" />
+        <link href="<?php echo base_url("css/styles.css") ?>" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <script>
             tamanho = 16;
@@ -151,15 +151,15 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading" aria-label="Menu de Cadastros">Dashboard</div>
-                            <a class="nav-link" href="<?php echo base_url("public/"."relatorios/dashboard") ?>" aria-label="Dashboard">
+                            <a class="nav-link" href="<?php echo base_url("relatorios/dashboard") ?>" aria-label="Dashboard">
                                 <div class="sb-nav-link-icon" ><i class="far fa-id-badge"></i></div> Geral
                             </a>                                
                         
                             <div class="sb-sidenav-menu-heading" aria-label="Menu de Cadastros">Cadastros</div>
-                            <a class="nav-link" href="<?php echo base_url("public/"."clientes/") ?>" aria-label="Cadastro de Clientes">
+                            <a class="nav-link" href="<?php echo base_url("clientes/") ?>" aria-label="Cadastro de Clientes">
                                 <div class="sb-nav-link-icon" ><i class="far fa-id-badge"></i></div> Clientes
                             </a>
-                            <a class="nav-link" href="<?php echo base_url("public/"."contratos/") ?>" aria-label="Cadastro de Contratos">
+                            <a class="nav-link" href="<?php echo base_url("contratos/") ?>" aria-label="Cadastro de Contratos">
                                 <div class="sb-nav-link-icon"><i class="fas fa-file-alt"></i></div> Contratos
                             </a>
 
@@ -170,10 +170,10 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/clientes_ativos") ?>" aria-label="Relatório de Clientes ativos">Clientes Ativos</a>
+                                    <a class="nav-link" href="<?php echo base_url("relatorios/clientes_ativos") ?>" aria-label="Relatório de Clientes ativos">Clientes Ativos</a>
                                 </nav>
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/clientes_inativos") ?>" aria-label="Relatório de Clientes Inativos">Clientes Inativos</a>
+                                    <a class="nav-link" href="<?php echo base_url("relatorios/clientes_inativos") ?>" aria-label="Relatório de Clientes Inativos">Clientes Inativos</a>
                                 </nav>
                             </div>
 
@@ -183,13 +183,13 @@
                             </a>
                             <div class="collapse" id="collapseLayouts2" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_vencidos") ?>" aria-label="Relatório de contratos vencidos">Vencidos</a>
-                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_vencendo") ?>" aria-label="Relatório de contrados vencendo">Vencendo</a>
-                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_avencer") ?>" aria-label="Relatórios de contratos a vencer">No prazo</a>
-                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_todos") ?>" aria-label="Relatório de contratos - todos os contratros">Todos</a>
+                                    <a class="nav-link" href="<?php echo base_url("relatorios/contratos_vencidos") ?>" aria-label="Relatório de contratos vencidos">Vencidos</a>
+                                    <a class="nav-link" href="<?php echo base_url("relatorios/contratos_vencendo") ?>" aria-label="Relatório de contrados vencendo">Vencendo</a>
+                                    <a class="nav-link" href="<?php echo base_url("relatorios/contratos_avencer") ?>" aria-label="Relatórios de contratos a vencer">No prazo</a>
+                                    <a class="nav-link" href="<?php echo base_url("relatorios/contratos_todos") ?>" aria-label="Relatório de contratos - todos os contratros">Todos</a>
                                 </nav>
                             </div>
-                            <a class="nav-link" href="<?php echo base_url("public/"."relatorios/email_pagina") ?>" aria-label="Envio de relatórios por Email">
+                            <a class="nav-link" href="<?php echo base_url("relatorios/email_pagina") ?>" aria-label="Envio de relatórios por Email">
                                 <div class="sb-nav-link-icon"><i class="fas fa-mail-bulk"></i></div> Email-Enviar
                             </a>
 
