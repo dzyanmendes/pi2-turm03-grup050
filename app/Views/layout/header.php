@@ -25,11 +25,8 @@
             }
         </script>
         <script type="text/javascript">
-            funcion confirma_exclusao(){
-                if (!confirm('Deseja excluir o registro?')){
-                    return false;
-                }
-                return true;
+            function confirmaExclusao(){
+                return confirm('Deseja excluir o registro?');                
             }
         </script>
         <script type="text/javascript">
@@ -103,6 +100,18 @@
             };
 
         </script>
+        <style>
+            .vencido{
+                background-color: #ff674d;
+            }
+
+            .vencendo{
+                background-color: #e6f587;
+            }
+            .noprazo{
+                background-color: #82cafa;
+            }
+        </style>
 
     </head>
     <body class="sb-nav-fixed">
@@ -171,7 +180,7 @@
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_vencidos") ?>" aria-label="Relatório de contratos vencidos">Vencidos</a>
                                     <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_vencendo") ?>" aria-label="Relatório de contrados vencendo">Vencendo</a>
-                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_avencer") ?>" aria-label="Relatórios de contratos a vencer">A Vencer</a>
+                                    <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_avencer") ?>" aria-label="Relatórios de contratos a vencer">No prazo</a>
                                     <a class="nav-link" href="<?php echo base_url("public/"."relatorios/contratos_todos") ?>" aria-label="Relatório de contratos - todos os contratros">Todos</a>
                                 </nav>
                             </div>

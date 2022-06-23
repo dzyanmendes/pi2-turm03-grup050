@@ -27,7 +27,7 @@ class Relatorios extends BaseController
 
         $model = new \App\Models\RelatoriosModel();
         $data['result'] = $model->clientes_ativos();            
-        $data['titulo_relatorio'] = 'Você está em Controller -> Relatorios -> clientes ativos';
+        $data['titulo_relatorio'] = 'Relatorios - Clientes Ativos';
         
         echo view('relatorios/clientes_ativos',$data);        
 
@@ -42,7 +42,7 @@ class Relatorios extends BaseController
 
         $model = new \App\Models\RelatoriosModel();
         $data['result'] = $model->clientes_inativos();            
-        $data['titulo_relatorio'] = 'Você está em Controller -> Relatorios -> clientes inativos';
+        $data['titulo_relatorio'] = 'Relatorios - Clientes Inativos';
         echo view('relatorios/clientes_inativos',$data);      
 
         echo view('layout/footer');            
@@ -56,7 +56,7 @@ class Relatorios extends BaseController
 
         $model = new \App\Models\RelatoriosModel();
         $data['result'] = $model->contratos_vencidos();            
-        $data['titulo_relatorio'] = 'Você está em Controller -> Relatorios -> Contratos vencidos';
+        $data['titulo_relatorio'] = 'Relatorios - Contratos vencidos';
         echo view('relatorios/contratos_vencidos',$data);       
 
         echo view('layout/footer');            
@@ -70,7 +70,7 @@ class Relatorios extends BaseController
 
         $model = new \App\Models\RelatoriosModel();
         $data['result'] = $model->contratos_vencendo();            
-        $data['titulo_relatorio'] = 'Você está em Controller -> Relatorios -> Contratos vencendo';
+        $data['titulo_relatorio'] = 'Relatorios - Contratos vencendo';
         echo view('relatorios/contratos_vencendo',$data);  
 
         echo view('layout/footer');            
@@ -79,12 +79,12 @@ class Relatorios extends BaseController
     public function contratos_avencer()
     {
         //echo 'Você está em Controller -> Relatorios -> Contratos a vencer';
-        $data['titulo'] = 'Relatorios - Contratos a vencer';
+        $data['titulo'] = 'Relatorios - Contratos No Prazo';
         echo view('layout/header',$data);
 
         $model = new \App\Models\RelatoriosModel();
         $data['result'] = $model->contratos_avencer();            
-        $data['titulo_relatorio'] = 'Você está em Controller -> Relatorios -> Contratos a vencer';
+        $data['titulo_relatorio'] = 'Relatorios - Contratos No Prazo';
         echo view('relatorios/contratos_avencer',$data);       
 
         echo view('layout/footer');            
@@ -93,12 +93,12 @@ class Relatorios extends BaseController
     public function contratos_todos()
     {
         //echo 'Você está em Controller -> Relatorios -> Contratos todos';
-        $data['titulo'] = 'Relatorios - Contratos a vencer';
+        $data['titulo'] = 'Relatorios - Contratos - Todos';
         echo view('layout/header',$data);
 
         $model = new \App\Models\RelatoriosModel();
         $data['result'] = $model->contratos_todos();            
-        $data['titulo_relatorio'] = 'Você está em Controller -> Relatorios -> Contratos todos';
+        $data['titulo_relatorio'] = 'Relatorios - Contratos - Todos';
         echo view('relatorios/contratos_todos',$data);     
 
         echo view('layout/footer');            
@@ -244,7 +244,7 @@ class Relatorios extends BaseController
         $email= \Config\Services::email();
         $email->setTo('pi2turm03grupo050@gmail.com');
         $email->setFrom('pi.univesp@consultortik.com.br');
-        $subject='Relatorios - Contratos a vencer - Posição em: ' . date('d/m/Y H:i');
+        $subject='Relatorios - Contratos No Prazo - Posição em: ' . date('d/m/Y H:i');
         $email->setSubject($subject);
         $email->setMailType('html');
         $data['titulo_relatorio'] = $subject;

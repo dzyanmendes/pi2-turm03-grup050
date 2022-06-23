@@ -13,9 +13,10 @@ class Contratos extends BaseController
         $model = new \App\Models\ContratosModel();
         //$data['result'] = $model->listarClientes();            
         
-        echo 'Você está em Controller -> Clientes -> Index';
+        //echo 'Você está em Controller -> Clientes -> Index';
         echo view('contratos/contratos_listartodos', [
-                    'result' => $model->listarContratos()
+                    'result' => $model->listarContratos(),
+                    'titulo_interno' => 'Listagem de todos os Contratos'
                  ] );
         echo view('layout/footer');            
     }

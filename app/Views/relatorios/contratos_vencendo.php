@@ -1,48 +1,56 @@
-<?php if($titulo_relatorio) { ?><h3><?php echo $titulo_relatorio; ?> </h3> <?php } else {echo '' ;}         ?>
+<div class="pl-4 ml-4 mt-4 mr-4 ">
+    <div class="titulo">
+        <?php
+            if ($titulo_relatorio) { ?><h3><?php echo $titulo_relatorio; ?> </h3> <?php }
+            else {
+                echo '';
+            }
+        ?>
+    </div>
+    <div class="table" id="dataTable">
+        <table class="table">
 
-<div class="table">
-<table>
+            <tr>
+                <th scope="col">codigo </th>
+                <th scope="col">nome </th>
+                <!--<th scope="col">nomefantasia    </th>-->
+                <!--<th scope="col">cpf             </th>-->
+                <!--<th scope="col">rg              </th>-->
+                <th scope="col">cnpj </th>
+                <!--<th scope="col">endereco        </th>-->
+                <th scope="col">data inicio </th>
+                <th scope="col">data fim </th>
+                <th scope="col">tipo </th>
+                <!--<th scope="col">cep             </th>-->
+                <!--<th scope="col">celular         </th>-->
+                <th scope="col">servico </th>
+                <th scope="col">dias </th>
+                <th scope="col">status </th>
+                <!--<th scope="col">nascimento      </th>-->
+                <!--<th scope="col">ie              </th>-->
+            </tr>
+            <?php foreach ($result as $row) : ?>
+                <tr>
+                    <td scope="row"><?php echo $row->codigo          ?></td>
+                    <td><?php echo $row->nome            ?></td>
+                    <!--<td><php echo $row->nomeFantasia    ?></td>-->
+                    <!--<td><php echo $row->cpf             ?></td>-->
+                    <!--<td><php echo $row->rg              ?></td>-->
+                    <td><?php echo $row->cnpj            ?></td>
+                    <!--<td><php echo $row->endereco        ?></td>-->
+                    <td><?php echo $row->dataIni          ?></td>
+                    <td><?php echo $row->dataFim          ?></td>
+                    <td><?php echo $row->tipo          ?></td>
+                    <!--<td><php echo $row->cep             ?></td>-->
+                    <!--<td><php echo $row->celular         ?></td>-->
+                    <td><?php echo $row->servico        ?></td>
+                    <td><?php echo $row->dias        ?></td>
+                    <td><?php echo $row->status        ?></td>
+                    <!--<td><php echo $row->nascimento      ?></td>-->
+                    <!--<td><php echo $row->ie              ?></td>-->
+                </tr>
+            <?php endforeach; ?>
 
-<tr>
-    <th>codigo          </th>
-    <th>nome            </th>
-    <!--<th>nomefantasia    </th>-->
-    <!--<th>cpf             </th>-->
-    <!--<th>rg              </th>-->
-    <th>cnpj            </th>
-    <!--<th>endereco        </th>-->
-    <th>data inicio      </th>
-    <th>data fim         </th>
-    <th>tipo            </th>
-    <!--<th>cep             </th>-->
-    <!--<th>celular         </th>-->
-    <th>servico         </th>
-    <th>dias            </th>
-    <th>status          </th>
-    <!--<th>nascimento      </th>-->
-    <!--<th>ie              </th>-->
-</tr>
-<?php foreach ($result as $row) : ?>
-    <tr>
-        <td><?php echo $row->codigo          ?></td>
-        <td><?php echo $row->nome            ?></td>
-        <!--<td><php echo $row->nomeFantasia    ?></td>-->
-        <!--<td><php echo $row->cpf             ?></td>-->
-        <!--<td><php echo $row->rg              ?></td>-->
-        <td><?php echo $row->cnpj            ?></td>
-        <!--<td><php echo $row->endereco        ?></td>-->
-        <td><?php echo $row->dataIni          ?></td>
-        <td><?php echo $row->dataFim          ?></td>
-        <td><?php echo $row->tipo          ?></td>
-        <!--<td><php echo $row->cep             ?></td>-->
-        <!--<td><php echo $row->celular         ?></td>-->
-        <td><?php echo $row->servico        ?></td>
-        <td><?php echo $row->dias        ?></td>
-        <td><?php echo $row->status        ?></td>
-        <!--<td><php echo $row->nascimento      ?></td>-->
-        <!--<td><php echo $row->ie              ?></td>-->
-    </tr>
-<?php endforeach; ?>
-
-</table>
+        </table>
+    </div>
 </div>

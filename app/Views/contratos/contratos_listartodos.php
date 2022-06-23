@@ -1,5 +1,8 @@
-<div class="table">
-<table>
+<div class="titulo mb-2 mt-4">
+    <?php if($titulo_interno) { ?><h3><?php echo $titulo_interno; ?> </h3> <?php } else {echo '' ;} ?>
+</div>
+<div >
+<table class="table" id="dataaTable">
 
 <tr>
     <th>codigo          </th>
@@ -37,8 +40,8 @@
         <!--<td><php echo $row->nascimento      ?></td>-->
         <!--<td><php echo $row->ie              ?></td>-->
         <td>
-            <a href="<?php echo base_url().'/public/contratos/alterar/'.$row->codigo; ?>" aria-label="Alterar este contrato">Editar</a>
-            <a href="<?php echo base_url().'/public/contratos/excluir/'.$row->codigo; ?>" aria-label="Excluir este contrato" onclick="return confirma_exclusao();">Excluir</a>
+            <a class="btn btn-success btn-sm" href="<?php echo base_url().'/public/contratos/alterar/'.$row->codigo; ?>" aria-label="Alterar este contrato">Editar</a>
+            <a class="btn btn-warning btn-sm"href="<?php echo base_url().'/public/contratos/excluir/'.$row->codigo; ?>" aria-label="Excluir este contrato" onclick="return confirmaExclusao();">Excluir</a>
 
         </td>
     </tr>
