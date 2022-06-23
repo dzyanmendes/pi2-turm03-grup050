@@ -1,4 +1,4 @@
-<div class="pl-4 ml-4 mt-4 mr-4 ">
+<div class="m-2">
     <div class="titulo">
         <?php
             if ($titulo_relatorio) { ?><h3><?php echo $titulo_relatorio; ?> </h3> <?php }
@@ -24,7 +24,7 @@
                 <!--<th scope="col">cep             </th>-->
                 <!--<th scope="col">celular         </th>-->
                 <th scope="col">servico </th>
-                <th scope="col">dias </th>
+                <th scope="col" style="text-align:right">dias </th>
                 <th scope="col">status </th>
                 <!--<th scope="col">nascimento      </th>-->
                 <!--<th scope="col">ie              </th>-->
@@ -55,7 +55,7 @@
                     <!--<td><php echo $row->cep             ?></td>-->
                     <!--<td><php echo $row->celular         ?></td>-->
                     <td><?php echo $row->servico        ?></td>
-                    <td><?php echo $row->dias        ?></td>
+                    <td style="text-align:right"><?php echo $row->dias        ?></td>
                     <td><?php echo $row->status;    ?></td>
                     <!--<td><php echo $row->nascimento      ?></td>-->
                     <!--<td><php echo $row->ie              ?></td>-->

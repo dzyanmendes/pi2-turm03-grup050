@@ -1,4 +1,4 @@
-<div class="pl-4 ml-4 mt-4 mr-4 ">
+<div class="m-2">
     <div class="titulo">
         <?php
             if ($titulo_relatorio) { ?><h3><?php echo $titulo_relatorio; ?> </h3> <?php }

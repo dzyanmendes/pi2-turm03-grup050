@@ -1,4 +1,5 @@
-<div class="titulo mb-2 mt-4">
+<div class="m-2">
+<div class="titulo">
     <?php if($titulo_interno) { ?><h3><?php echo $titulo_interno; ?> </h3> <?php } else {echo '' ;} ?>
 </div>
 <div >

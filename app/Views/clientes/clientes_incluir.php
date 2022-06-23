@@ -1,6 +1,6 @@
 <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
-<div class="pl-4 ml-4 mt-4 mr-4 ">
+<div class="m-2">
   <div class="titulo">
     <?php 
           if ($titulo_interno) { ?><h3><?php echo $titulo_interno; ?> </h3> <?php } 

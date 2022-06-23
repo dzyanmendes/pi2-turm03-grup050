@@ -1,7 +1,8 @@
-<div class="titulo mb-2 mt-4">
+<div class="m-2">
+<div class="titulo ">
     <?php if($titulo_interno) { ?><h3><?php echo $titulo_interno; ?> </h3> <?php } else {echo '' ;} ?>
 </div>
-<div class="table">
+
 <div class="mb-2"><a href="<?php echo base_url().'/public/clientes/incluir'?>" class="btn btn-primary active" role="button" aria-pressed="true">Cadastrar Cliente</a>
 </div>
 <table id="dataaTable" class="table">
